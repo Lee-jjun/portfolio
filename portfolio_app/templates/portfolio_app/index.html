@@ -1,0 +1,53 @@
+
+{% extends 'portfolio_app/base.html' %}
+{% load static %}
+{% block title %}이재준 | Portfolio{% endblock %}
+
+{% block content %}
+
+<header>
+  <h2>JAEJUN.DEV</h2>
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>안녕하세요, <span class="accent">웹 개발자 이재준</span>입니다.</h1>
+    <p>모던하고 깔끔한 UI/UX를 지향하는 풀스택 개발자입니다.</p>
+    <button onclick="location.href='#projects'">프로젝트 보기</button>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="section-title">💼 Projects</h2>
+  <div class="projects">
+    <div class="project-card">
+      <img src="{% static 'images/project1.png' %}" alt="AI 여행 파트너">
+      <div class="content">
+        <h3>AI 여행 파트너</h3>
+        <p>사용자 맞춤형 여행 플랜 생성 & 동행자 매칭 웹 서비스</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="{% static 'images/project2.png' %}" alt="Chat Platform">
+      <div class="content">
+        <h3>Chat Matching Platform</h3>
+        <p>Django + WebSocket 기반의 실시간 매칭 및 채팅</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">📬 Contact</h2>
+  <p style="text-align:center;">Email: <a href="mailto:jaejun@example.com">jaejun@example.com</a></p>
+</section>
+
+<footer>
+  © 2025 Jaejun.dev | Built with ❤️ and Code
+</footer>
+
+{% endblock %}
