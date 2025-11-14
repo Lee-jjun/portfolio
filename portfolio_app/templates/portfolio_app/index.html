@@ -6,9 +6,9 @@
 
 <div class="layout">
 
-  <!-- 🧭 왼쪽 사이드 네비게이션 -->
+  <!-- 🧭 사이드바 -->
   <aside class="sidebar">
-    <h2 class="logo">JAEJUN</h2>
+    <h2 class="logo">Portfolio</h2>
     <nav>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
@@ -28,9 +28,7 @@
 
     <section id="about">
       <h2 class="section-title">About Me</h2>
-      <p>
-        뭘 적을까
-      </p>
+      <p>뭘 적을까</p>
     </section>
 
     <section id="skills">
@@ -38,7 +36,7 @@
       <div class="skills-grid">
         <div class="skill-card">
           <h3>Web</h3>
-          <p>HTML / CSS / JavaScript</p>
+          <p>HTML / CSS / JavaScript / Bootstrap</p>
         </div>
         <div class="skill-card">
           <h3>Framework</h3>
@@ -56,21 +54,39 @@
     </section>
 
     <section id="projects">
-      <h2 class="section-title">💼 Projects</h2>
+      <h2 class="section-title">Projects</h2>
 
-  <div class="projects">
-    <!-- 여행비서 에이전트 -->
-    <div class="project-card" onclick="openModal('pptModal')" style="cursor:pointer;">
-          <h3>여행비서 에이전트 PPT</h3>
+      <div class="projects">
+
+        <!-- 🚀 여행비서 에이전트 PPT 카드 -->
+        <div class="project-card" onclick="openModal('pptModal')">
+          <img src="{% static 'images/travelAgnet.png' %}" alt="여행비서 PPT">
+          <p>GitHub : <a href="https://github.com/Lee-jjun/travel-agent" target="_blank">https://github.com/Lee-jjun/travel-agent</a></p>
         </div>
 
-        <!-- 모달 -->
+        <!-- 🖥 포트폴리오 웹사이트 카드 -->
+        <div class="project-card" onclick="openModal('webModal')">
+          <img src="{% static 'images/AI-X APT.png' %}" alt="포트폴리오 웹사이트">
+          <p>GitHub : <a href="https://github.com/Lee-jjun/AI-X-APT" target="_blank">https://github.com/Lee-jjun/AI-X-APT</a></p>
+        </div>
+
+        <!-- 📌 PPT 모달 -->
         <div id="pptModal" class="modal">
           <div class="modal-content">
             <span class="close" onclick="closeModal('pptModal')">&times;</span>
-            <iframe src="{% static 'ppt/project_ppt.pdf' %}" width="100%" height="600px"></iframe>
+            <iframe src="{% static 'ppt/TravelAgent.pdf' %}"></iframe>
           </div>
         </div>
+
+        <!-- 📌 웹사이트 PDF 모달 -->
+        <div id="webModal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('webModal')">&times;</span>
+            <iframe src="{% static 'ppt/Ai-X APT.pdf' %}"></iframe>
+          </div>
+        </div>
+
+      </div>
     </section>
 
     <section id="contact">
@@ -83,14 +99,15 @@
       © 2025 Jaejun
     </footer>
   </main>
-<script>
-function openModal(id){
-  document.getElementById(id).style.display = 'flex';
-}
-function closeModal(id){
-  document.getElementById(id).style.display = 'none';
-}
-</script>
+
+  <script>
+    function openModal(id){
+      document.getElementById(id).style.display = 'flex';
+    }
+    function closeModal(id){
+      document.getElementById(id).style.display = 'none';
+    }
+  </script>
 </div>
 
 {% endblock %}
