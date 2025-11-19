@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-i4i%9x4b7co6rw*#$_e_4_)p74is-446y68ttwmu9*&6z%x+8n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '16.176.155.243', 'ec2-16-176-155-243.ap-southeast-2.compute.amazonaws.com']
 
 
 # Application definition
@@ -116,11 +116,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
+# Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 
+# 개발용 static 폴더
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'portfolio_app', 'static')
+    os.path.join(BASE_DIR, 'portfolio_app', 'static'),
 ]
+
+# 배포용으로 collectstatic이 모을 폴더
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_collected')
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

@@ -1,0 +1,259 @@
+/* ------------------------------
+   Global Style
+------------------------------ */
+body {
+  font-family: 'Pretendard', sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+.layout {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  gap: 50px;
+}
+
+/* ------------------------------
+   Sidebar
+------------------------------ */
+.sidebar {
+  width: 230px;
+  position: sticky;
+  top: 40px;
+  height: fit-content;
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.sidebar .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #2b4eff;
+}
+
+.sidebar nav a {
+  display: block;
+  padding: 12px 0;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #555;
+  transition: 0.2s;
+}
+
+.sidebar nav a:hover {
+  color: #2b4eff;
+  transform: translateX(4px);
+}
+
+/* ------------------------------
+   Main Content
+------------------------------ */
+.content {
+  flex: 1;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #2b4eff;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  width: 40px;
+  height: 4px;
+  background: #2b4eff;
+  display: block;
+  border-radius: 2px;
+  margin-top: 8px;
+}
+
+/* Sections Wrapper */
+section {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 18px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* ------------------------------
+   Hero
+------------------------------ */
+.hero h1 {
+  font-size: 2.3rem;
+  font-weight: 700;
+}
+
+.accent {
+  color: #2b4eff;
+}
+
+/* ------------------------------
+   Education
+------------------------------ */
+#education ul {
+  padding-left: 20px;
+}
+
+#education li {
+  margin-bottom: 10px;
+}
+
+/* ------------------------------
+   Skills Grid
+------------------------------ */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.skill-card {
+  background: #f9faff;
+  border-radius: 16px;
+  padding: 25px;
+  border: 1px solid #dfe4ff;
+  transition: 0.25s ease;
+}
+
+.skill-card:hover {
+  background: #eef2ff;
+  transform: translateY(-5px);
+}
+
+.skill-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #2b4eff;
+}
+
+/* ------------------------------
+   Projects Grid
+------------------------------ */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;                 /* 카드 간 간격 */
+  justify-content: center;
+}
+
+.project-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  flex: 0 0 380px;   /* 카드 고정 폭 */
+  max-width: 380px;
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.project-card h3 {
+  font-size: 1.2rem;
+  color: #2b4eff;
+  margin-bottom: 10px;
+}
+
+.project-card .project-desc {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.project-card a {
+  color: #2b4eff;
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+}
+
+/* ------------------------------
+   Modal
+------------------------------ */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(3px);
+}
+
+.modal-content {
+  width: 80%;
+  height: 80%;
+  background: white;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.modal-content iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ------------------------------
+   Responsive
+------------------------------ */
+@media (max-width: 900px) {
+  .projects {
+    justify-content: center;
+  }
+  .project-card {
+    flex: 0 0 90%;
+    max-width: 90%;
+  }
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ------------------------------
+   Contact
+------------------------------ */
+.contact-list li {
+  margin-bottom: 10px;
+}
